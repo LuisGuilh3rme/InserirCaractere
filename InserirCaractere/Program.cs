@@ -1,8 +1,13 @@
 ﻿Console.WriteLine("Informe o texto a ser modificado:");
 string texto = Console.ReadLine();
 
-Console.WriteLine("Informe o caractere a ser inserido:");
-char.TryParse(Console.ReadLine(), out char caractere);
+char caractere;
+do
+{
+    Console.Clear();
+    Console.WriteLine("Informe o caractere a ser inserido:");
+} while (!char.TryParse(Console.ReadLine(), out caractere));
+
 
 string textoFinal = InserirAntes(texto, caractere);
 Console.WriteLine("Texto original: {0}", texto);
